@@ -27,6 +27,12 @@ class Product {
   @Column()
   category_id: string;
 
+  @Column()
+  quantity: number;
+
+  @Column()
+  image: string;
+
   @ManyToOne(() => Category)
   @JoinColumn({ name: "category_id" })
   category: Category;
