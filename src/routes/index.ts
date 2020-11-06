@@ -1,9 +1,8 @@
 import { Router } from "express";
+import productsRouter from "./products.routes";
 
 const routes = Router();
 
-routes.get("/products", (request, response) => {
-  return response.json({ message: "ok" });
-});
+routes.use("/products", productsRouter);
 
 export default routes;
