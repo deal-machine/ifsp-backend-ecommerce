@@ -11,7 +11,7 @@ productsRouter.get("/", async (request, response) => {
   const productsRepository = getRepository(Product);
   const products = await productsRepository.find({ relations: ["category"] });
 
-  // products.map(product=> delete product.category_id)
+  products.map((product) => delete product.category_id);
 
   return response.json(products);
 });
